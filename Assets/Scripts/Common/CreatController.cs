@@ -9,6 +9,8 @@ public class CreatController : SingletonMono<CreatController>
     [SerializeField] private GameObject TreeTomato;
     [SerializeField] private GameObject TableTomamto;
     [SerializeField] private GameObject Client;
+    [SerializeField] private GameObject BoxCarton;
+    [SerializeField] private GameObject Money;
 
     public GameObject CreateTomamto(Vector3 pos)
     {
@@ -33,4 +35,18 @@ public class CreatController : SingletonMono<CreatController>
         var clientObj = SmartPool.Instance.Spawn(Client, pos, Client.transform.rotation);
         return clientObj;
     }
+
+    public GameObject CreateBoxCarton()
+    {
+        var pos = GameController.instance.tablePurchaseStuff.boxCarton.transform.position;
+        var boxCarton = SmartPool.Instance.Spawn(BoxCarton, pos, Client.transform.rotation);
+        return boxCarton;
+    }
+
+    public GameObject CreateMoney(Vector3 pos)
+    {
+        var clientObj = SmartPool.Instance.Spawn(Money, pos, Client.transform.rotation);
+        return clientObj;
+    }
+
 }

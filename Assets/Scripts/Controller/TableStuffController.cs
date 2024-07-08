@@ -41,12 +41,14 @@ public class TableStuffController : MonoBehaviour
                 SmartPool.Instance.Despawn(listTomato[i]);
             }
             listTomato.Clear();
+            currentFruit = 0;
             hasFruit = false;
         }
         else
         {
             for (int i = 0; i < numberReduce; i++)
             {
+                currentFruit -= 1;
                 SmartPool.Instance.Despawn(listTomato[i]);
                 listTomato.RemoveAt(i);
             }

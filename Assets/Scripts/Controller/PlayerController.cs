@@ -37,6 +37,24 @@ public class PlayerController : CharacterBehaviour
         gameObject.transform.position += direction * Time.deltaTime * 10;
         this.gameObject.transform.forward = direction;
     }
+    
+    private void ReAddTomato()
+    {
+        if (posObjectCarrying.transform.childCount > 0)
+        {
+            carrySomething = true;
+            for (int i = 0; i < posObjectCarrying.transform.childCount; i++)
+            {
+                currentCarrying += 1;
+                tomatoCarrying.Add(posObjectCarrying.transform.GetChild(i).gameObject);
+            }
+        }
+        else
+        {
+            carrySomething = false;
+        }
+       
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -68,9 +86,12 @@ public class PlayerController : CharacterBehaviour
                     var pos = tableStuffController.posShow(tomatoCarrying[i]);
                     tomatoCarrying[i].transform.DOJump(pos, 2, 1, 1);
                     tomatoCarrying[i].transform.parent = null;
+                    //tomatoCarrying.Remove(tomatoCarrying[i]);
                 }
             }
             tomatoCarrying.Clear();
+            ReAddTomato();
+
             if (currentCarrying <= 0)
             {
                 carrySomething = false;
