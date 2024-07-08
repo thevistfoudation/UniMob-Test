@@ -7,11 +7,11 @@ public class UnlockZoneController : MonoBehaviour
     public float price;
     public GameObject hiddenObject;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            if(GameController.Instance.currentValueMoney >= price)
+            if (GameController.Instance.currentValueMoney >= price)
             {
                 GameController.Instance.currentValueMoney -= price;
                 gameObject.SetActive(false);

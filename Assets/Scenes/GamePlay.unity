@@ -5448,7 +5448,7 @@ GameObject:
   - component: {fileID: 1554663009}
   - component: {fileID: 1554663008}
   m_Layer: 0
-  m_Name: ZoneUnlock-1 (1)
+  m_Name: ZoneUnlock-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
