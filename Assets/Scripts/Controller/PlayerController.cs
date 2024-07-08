@@ -1,14 +1,11 @@
 using DG.Tweening;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 
 public class PlayerController : CharacterBehaviour
 {
     [SerializeField]
     private FloatingJoystick floatingJoystick;
-    [SerializeField]
-    private Animator animator;
 
     private void Update()
     {
@@ -42,6 +39,7 @@ public class PlayerController : CharacterBehaviour
     {
         if (posObjectCarrying.transform.childCount > 0)
         {
+            currentCarrying = 0;
             carrySomething = true;
             for (int i = 0; i < posObjectCarrying.transform.childCount; i++)
             {
@@ -51,6 +49,7 @@ public class PlayerController : CharacterBehaviour
         }
         else
         {
+            currentCarrying = 0;
             carrySomething = false;
         }
        

@@ -1,11 +1,5 @@
 using DG.Tweening;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Net.WebSockets;
-using System.Runtime.CompilerServices;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 public class CustomerController : CharacterBehaviour
 {
@@ -154,7 +148,7 @@ public class CustomerController : CharacterBehaviour
             cartoonBox.transform.SetParent(posObjectCarrying.transform);
             cartoonBox.transform.position = posObjectCarrying.transform.position;
             characterState = CharacterState.GoHome;
-            tableCashController.CreateAndSetMoney(5);
+            //tableCashController.CreateAndSetMoney(5);
             carrySomething = true;
             isPayment = true;
            
